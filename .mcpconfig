@@ -1,0 +1,33 @@
+{
+    "include_patterns": [
+        "**/*.{ts,tsx,js,jsx,json,md}",
+        "**/nostr/**/*.{ts,tsx}",
+        "**/components/**/*.{ts,tsx}",
+        "**/hooks/**/*.{ts,tsx}",
+        "**/lib/**/*.{ts,tsx}"
+    ],
+    "exclude_patterns": [
+        "**/node_modules/**",
+        "**/dist/**",
+        "**/build/**",
+        "**/.git/**",
+        "**/.next/**",
+        "**/coverage/**",
+        "**/test/**"
+    ],
+    "max_file_size_kb": 1000,
+    "index_full_content": true,
+    "context_window_lines": 50,
+    "priority_patterns": [
+        "**/nostr/types.ts",
+        "**/nostr/constants.ts",
+        "**/nostr/utils.ts",
+        "**/hooks/useNostr*.ts",
+        "**/components/Nostr*.tsx"
+    ],
+    "doc_patterns": [
+        "README.md",
+        "docs/**/*.md",
+        "**/nostr/**/*.md"
+    ]
+} 
