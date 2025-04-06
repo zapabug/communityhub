@@ -1,29 +1,22 @@
 import React from 'react';
-import { Feed } from '../components/Feed';
-import { useLogin } from 'nostr-hooks';
+import dynamic from 'next/dynamic';
+import Head from 'next/head';
 
-export default function Home() {
-  const { loginWithExtension, loginFromLocalStorage } = useLogin();
+// Import App with no SSR to prevent window not defined errors
+const App = dynamic(() => import('../src/App'), {
+  ssr: false,
+});
 
-  React.useEffect(() => {
-    // Try to login from local storage on page load
-    loginFromLocalStorage();
-  }, [loginFromLocalStorage]);
-
+export default function IndexPage() {
   return (
-    <div className="container mx-auto p-4">
-      <header className="mb-8">
-        <h1 className="text-3xl font-bold mb-4">Nostr Social Graph</h1>
-        <button
-          onClick={() => loginWithExtension()}
-          className="px-4 py-2 bg-purple-500 text-white rounded"
-        >
-          Login with Extension
-        </button>
-      </header>
-      <main>
-        <Feed />
-      </main>
-    </div>
+    <>
+      <Head>
+        <title>Mad FUN - Discover Madeira through Nostr</title>
+        <meta name="description" content="A decentralized social exploration app for Madeira Island enthusiasts, built on the Nostr protocol." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <App />
+    </>
   );
 } 

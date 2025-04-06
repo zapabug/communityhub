@@ -1,30 +1,47 @@
 {
-  "name": "socialgraph",
+  "name": "madfun",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@nostr-dev-kit/ndk": "^2.0.0",
     "next": "^15.2.4",
+    "nostr-login": "^1.7.9",
+    "nostr-tools": "^2.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "nostr-hooks": "^1.8.0",
-    "@nostr-dev-kit/ndk": "^1.0.0",
-    "nostr-tools": "^1.17.0"
+    "react-force-graph-2d": "^1.27.1"
   },
   "devDependencies": {
-    "@types/react": "^18.2.0",
-    "@types/react-dom": "^18.2.0",
-    "@types/node": "^18.0.0",
-    "typescript": "^5.0.0",
-    "tailwindcss": "^3.4.1",
-    "postcss": "^8.4.35",
-    "autoprefixer": "^10.4.19",
     "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/typography": "^0.5.10",
-    "tailwindcss-animate": "^1.0.7"
+    "@types/node": "^18.0.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^3.4.17",
+    "tailwindcss-animate": "^1.0.7",
+    "typescript": "^5.0.0"
   },
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
-  }
+    "dev": "NODE_OPTIONS='--max-old-space-size=4096' next dev",
+    "build": "NODE_OPTIONS='--max-old-space-size=4096' next build",
+    "start": "NODE_OPTIONS='--max-old-space-size=4096' next start"
+  },
+  "description": "A modern community building client for Nostr, focused on fostering meaningful connections and community engagement.",
+  "main": "postcss.config.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zapabug/communityhub.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zapabug/communityhub/issues"
+  },
+  "homepage": "https://github.com/zapabug/communityhub#readme"
 }

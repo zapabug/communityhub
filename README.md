@@ -1,41 +1,99 @@
-# CommunityHub
+# Mad FUN - Discover Madeira through Nostr
 
-A modern community building client for Nostr, focused on fostering meaningful connections and community engagement.
-
-## About
-
-CommunityHub is a web application built on the Nostr protocol that aims to make community building and engagement more intuitive and effective. It provides real-time interaction capabilities using Nostr's decentralized network.
+A decentralized social exploration app for Madeira Island enthusiasts, built on the Nostr protocol.
 
 ## Features
 
-- Real-time Nostr event streaming
-- Modern UI with Tailwind CSS
-- Built with Next.js and TypeScript
-- Fully decentralized using Nostr protocol
+- **Social Graph** - Visualize connections between Madeira enthusiasts
+- **Madeira Feed** - See beautiful images of Madeira shared on Nostr
+- **Community Feed** - Read posts from trusted Nostr users about Madeira
+- **nostr-login Integration** - Sign in with NIP-07 extensions or any compatible signer
 
-## Development
+## Tech Stack
 
-This project uses:
-- Next.js 15.2
-- React 18
-- TypeScript
-- Tailwind CSS
-- NDK (Nostr Development Kit)
+- **Next.js** - React framework for production
+- **React** - UI Library
+- **NDK (Nostr Dev Kit)** - SDK for interacting with the Nostr protocol
+- **Tailwind CSS** - Utility-first CSS framework
+- **nostr-login** - Elegant login experience for Nostr
 
-### Getting Started
+## Getting Started
 
-```bash
-# Install dependencies
-npm install
+### Prerequisites
 
-# Run development server
-npm run dev
+- Node.js 18+ or Bun
+
+### Installation
+
+1. Clone the repository:
+   ```
+   git clone https://github.com/yourusername/madfun.git
+   cd madfun
+   ```
+
+2. Install dependencies:
+   ```
+   npm install
+   # or
+   bun install
+   ```
+
+3. Start the development server:
+   ```
+   npm run dev
+   # or
+   bun run dev
+   ```
+
+## App Structure
+
+```
+madfun/
+├── pages/           # Next.js pages
+│   ├── index.tsx    # Main page
+│   ├── _app.tsx     # App container
+├── src/             # Source code
+│   ├── App.tsx      # Main application component
+│   ├── components/  # React components
+│   │   ├── Feed/              # Feed components
+│   │   │   └── CommunityFeed.tsx  # Displays community posts
+│   │   ├── ImageFeed/         # Image feed components
+│   │   │   ├── ImageCard.tsx      # Image card component
+│   │   │   └── MadeiraImageFeed.tsx # Displays Madeira images
+│   │   └── SocialGraph/       # Social graph components
+│   │       └── SocialGraph.tsx    # Displays the social network
+│   ├── context/    # React context
+│   │   └── NostrContext.tsx   # Provides Nostr functionality
+│   ├── types/      # TypeScript types
+│   │   ├── global.d.ts    # Global type definitions
+│   │   └── index.ts       # Type exports
+│   └── utils/      # Utility functions
+├── styles/         # CSS styles
+│   └── globals.css # Global styles
 ```
 
-## Contributing
+## Deployment
 
-Contributions are welcome! Feel free to open issues and submit pull requests.
+Build for production:
+
+```
+npm run build
+# or
+bun run build
+```
+
+## Madeira Hashtags
+
+The app focuses on these Madeira-related hashtags:
+- #madeira
+- #travelmadeira
+- #visitmadeira
+- #funchal
+- #fanal
+- #espetada
+- #freemadeira
+- #madstr
 
 ## License
 
-This project is open source and available under the MIT license. 
+MIT 

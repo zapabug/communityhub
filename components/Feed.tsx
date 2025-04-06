@@ -1,22 +1,25 @@
-import React, { useEffect } from 'react';
-import { useSubscription } from 'nostr-hooks';
+import React, { useState } from 'react';
 
 export const Feed: React.FC = () => {
-  const subId = 'global-feed';
-  const { events, isLoading, loadMore, createSubscription } = useSubscription(subId);
+  const [events, setEvents] = useState<Array<{ id: string, content: string, pubkey: string }>>([
+    { id: '1', content: 'This is a mock post', pubkey: 'npub1...' },
+    { id: '2', content: 'Another mock post for testing', pubkey: 'npub2...' },
+    { id: '3', content: 'Third test post', pubkey: 'npub3...' }
+  ]);
+  const [isLoading, setIsLoading] = useState(false);
 
-  useEffect(() => {
-    const filters = [{
-      kinds: [1],
-      limit: 50
-    }];
-
-    createSubscription(filters);
-  }, [createSubscription]);
-
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
+  const loadMore = () => {
+    setIsLoading(true);
+    // Simulate loading more posts
+    setTimeout(() => {
+      setEvents([
+        ...events,
+        { id: '4', content: 'Newly loaded post', pubkey: 'npub4...' },
+        { id: '5', content: 'Another new post', pubkey: 'npub5...' }
+      ]);
+      setIsLoading(false);
+    }, 1000);
+  };
 
   return (
     <div>
@@ -27,10 +30,10 @@ export const Feed: React.FC = () => {
         </div>
       ))}
       <button 
-        onClick={() => loadMore()} 
+        onClick={loadMore} 
         className="mt-4 px-4 py-2 bg-blue-500 text-white rounded"
       >
-        Load More
+        {isLoading ? 'Loading...' : 'Load More'}
       </button>
     </div>
   );

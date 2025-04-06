@@ -1,5 +1,5 @@
 import React from 'react';
-import { BRAND_COLORS } from '../user_notes/brandColors';
+import { BRAND_COLORS } from './brandColors';
 
 export const ColorPalette = () => {
   const colorGroups = {
